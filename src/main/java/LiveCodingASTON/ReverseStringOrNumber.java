@@ -3,56 +3,56 @@ package LiveCodingASTON;
 public class ReverseStringOrNumber {
     public static void main(String[] args) {
         /*
-        1) Развернуть строку 3 способами(StringBuilder нельзя), в том числе используя рекурсию
-        2) Развернуть число 123 (в 321)
-        3) метод принимает массив чисел, и посчитать сумму чисел и вывести строкой - четное, нечетное
+            Развернуть число 123 (в 321)
         */
 
-        // First Task
-        String word = "Hello World";
+        int number = 123;
 
-        printString(word);
-        word = reverseStringWithArray(word);
-        printString(word);
-        word = reverseStringWithRecursion(word);
-        printString(word);
-        word = reverseStringWithCycle(word);
-        printString(word);
+        System.out.println(reverseIntByDividing(number));
+        System.out.println(reverseIntByString(number));
+        System.out.println(reverseWithRecursion(number));
     }
 
-    public static String reverseStringWithArray(String string) {
-        char[] chars = string.toCharArray();
-        int leftEdge = 0;
-        int rightEdge = chars.length - 1;
+    // Разворот числа с помощью деления и цикла while
+    public static int reverseIntByDividing(int number) {
+        int reversed = 0;
 
-        while (leftEdge < rightEdge) {
-            char tempChar = chars[leftEdge];
-            chars[leftEdge] = chars[rightEdge];
-            chars[rightEdge] = tempChar;
-
-            leftEdge++;
-            rightEdge--;
+        while (number > 0) {
+            int digit = number % 10;
+            reversed = reversed * 10 + digit;
+            number = number / 10;
         }
 
-        return new String(chars);
+        return reversed;
     }
 
-    public static String reverseStringWithRecursion(String string) {
-        if (string.isEmpty()) return string;
-        return reverseStringWithRecursion(string.substring(1)) + string.charAt(0);
-    }
+    // Разворот через строку
+    public static int reverseIntByString(int number) {
+        String string = String.valueOf(number);
+        String reversedString = "";
 
-    public static String reverseStringWithCycle(String string) {
-        char[] result = new char[string.length()];
-
-        for (int i = 0; i < string.length(); i++) {
-            result[i] = string.charAt(string.length() - 1 - i);
+        for (int i = string.length() - 1; i >= 0; i--) {
+            reversedString += string.charAt(i);
         }
 
-        return new String(result);
+        return Integer.parseInt(reversedString);
     }
 
-    public static void printString(String stringToPrint) {
-        System.out.println(stringToPrint);
+    // Разворот через рекурсию
+    public static int reverseWithRecursion(int number) {
+        return number;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
