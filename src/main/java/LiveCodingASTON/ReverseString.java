@@ -1,17 +1,26 @@
 package LiveCodingASTON;
 
+import java.sql.SQLOutput;
+
 public class ReverseString {
     public static void main(String[] args) {
         /*
         Развернуть строку 3 способами + 1 через StringBuilder.reverse()
          */
 
-        String word = "dlrow olleH";
+        String words = "dlrow olleH";
 
-        System.out.println(reverseWithWhile(word));
-        System.out.println(reverseWithFor(word));
-        System.out.println(reverseWithStringBuilder(word));
-        System.out.println(reverseWithStringBuilderQuick(word));
+        char[] chars = words.toCharArray();
+        int start = 0;
+        int end = chars.length - 1;
+
+        while (start < end) {
+            char temp = chars[start];
+            chars[start++] = chars[end];
+            chars[end--] = temp;
+        }
+
+        System.out.println(new String(chars));
     }
 
     // Разворот через массив символов и цикл while
@@ -64,8 +73,8 @@ public class ReverseString {
     }
 
     // Разворот с помощью StringBuilder(string).reverse().toString();
-    public static String reverseWithStringBuilderQuick(String string){
-        if (string == null){
+    public static String reverseWithStringBuilderQuick(String string) {
+        if (string == null) {
             throw new IllegalArgumentException("Input cannot be null");
         }
 

@@ -1,16 +1,18 @@
 package LiveCodingASTON;
 
-public class ReverseStringOrNumber {
+public class ReverseNumber {
     public static void main(String[] args) {
         /*
             Развернуть число 123 (в 321)
         */
 
         int number = 123;
+//
+//        System.out.println(reverseIntByDividing(number));
+//        System.out.println(reverseIntByString(number));
+//        System.out.println(reverseWithRecursion(number));
 
-        System.out.println(reverseIntByDividing(number));
-        System.out.println(reverseIntByString(number));
-        System.out.println(reverseWithRecursion(number));
+
     }
 
     // Разворот числа с помощью деления и цикла while
