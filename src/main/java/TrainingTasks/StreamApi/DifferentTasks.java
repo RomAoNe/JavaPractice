@@ -1,5 +1,6 @@
 package TrainingTasks.StreamApi;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -11,6 +12,10 @@ public class DifferentTasks {
 //        leaveStringsStartsWithA();
 //        leadToUppercase();
 //        sumNumbers();
+//        deleteDuplicates();
+//        sortDown();
+//        sumLengthOfWords();
+        takeThreeFirstNumbers();
     }
 
     public static void getStringsLengths() {
@@ -97,5 +102,70 @@ public class DifferentTasks {
                 .sum();
 
         System.out.println(sum);
+    }
+
+    public static void deleteDuplicates() {
+        /*
+        Убрать дубликаты
+        Input: [1,2,2,3,3,4]
+        Output: [1,2,3,4]
+        */
+        List<Integer> numbers = List.of(1, 2, 2, 3, 3, 4);
+        List<Integer> uniqueNumbers = numbers.stream()
+                .distinct()
+                .collect(Collectors.toList());
+
+        System.out.println(uniqueNumbers);
+    }
+
+    public static void sortDown() {
+        /*
+        Сортировка по убыванию
+        Input: [3,1,5,2]
+        Output: [5,3,2,1]
+        */
+
+        List<Integer> numbers = List.of(3, 1, 5, 2);
+
+        List<Integer> sortedNumbers = numbers.stream()
+                .sorted((a, b) -> Integer.compare(b, a))
+//                .sorted((a, b) -> (b - a))
+//                .sorted(Comparator.reverseOrder())
+                .collect(Collectors.toList());
+
+        System.out.println(sortedNumbers);
+    }
+
+    public static void sumLengthOfWords() {
+        /* Нужно:
+        -взять длины
+        - сложить
+        Input: ["java", "qa", "stream"]
+        Output: 12
+        */
+
+        List<String> words = List.of("java", "qa", "stream");
+
+        Integer result = words.stream()
+                .mapToInt(w -> w.length())
+                .sum();
+
+        System.out.println(result);
+    }
+
+    public static void takeThreeFirstNumbers() {
+        /*
+        Взять первые 3 элемента
+        Input: [10,20,30,40,50]
+        Output: [10,20,30]
+        */
+
+        List<Integer> numbers = List.of(10, 20, 30, 40, 50);
+
+        List<Integer> firstNumbers = numbers.stream()
+                .limit(3)
+                .collect(Collectors.toList());
+
+        System.out.println(firstNumbers);
     }
 }
