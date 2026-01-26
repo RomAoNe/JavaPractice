@@ -11,6 +11,10 @@ public class DifferentTasks {
 //        leaveStringsStartsWithA();
 //        leadToUppercase();
 //        sumNumbers();
+//        areThereNegativeNumbers();
+//        getLengthOfStrings();
+//        keepNumbersMoreOrEquals3();
+isThereNumberBiggerThan5();
     }
 
     public static void getStringsLengths() {
@@ -98,4 +102,92 @@ public class DifferentTasks {
 
         System.out.println(sum);
     }
+
+    public static void areThereNegativeNumbers() {
+        /*
+        Input: [3,5,-1,7]
+        Output: true
+         */
+
+        List<Integer> numbers = List.of(3, 5, -2, 7);
+
+        boolean areThereNegatives = numbers.stream()
+                .anyMatch(n -> n < 0);
+
+        System.out.println(areThereNegatives);
+    }
+
+    public static void getLengthOfStrings() {
+        /*
+        Задача 9 — Получить список длин слов
+        Input: ["cat","java","stream"]
+        Output: [3,4,6]
+         */
+
+        List<String> words = List.of("cat", "java", "stream");
+
+        List<Integer> lengths = words.stream()
+                .map(String::length)
+                .collect(Collectors.toList());
+
+        System.out.println(lengths);
+    }
+
+    public static void keepNumbersMoreOrEquals3() {
+        /*
+        Нужно оставить числа >= 3
+        Input: [1,2,3,4,5,6]
+        Output: [3,4,5,6]
+         */
+
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
+        List<Integer> result = numbers.stream()
+                .filter(n -> n >= 3)
+                .collect(Collectors.toList());
+
+        System.out.println(result);
+    }
+
+    public static void keepWordsLongerThan3() {
+        /*
+        - оставить слова длиной > 3
+        - привести к UPPER CASE
+        Input: ["java", "qa", "stream", "api"]
+        Output: ["JAVA", "STREAM"]
+         */
+
+        List<String> words = List.of("java", "qa", "stream", "api");
+        List<String> result = words.stream()
+                .filter(w -> w.length() > 3)
+                .map(String::toUpperCase)
+                .collect(Collectors.toList());
+
+        System.out.println(result);
+    }
+
+    public static void isThereNumberBiggerThan5() {
+        /*
+        Нужно проверить: есть ли хотя бы одно число > 5.
+        Input: [1,2,3,4,5,6]
+        Output: true
+        */
+
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
+
+        boolean isThere = numbers.stream()
+                .anyMatch(n -> n > 5);
+
+        System.out.println(isThere);
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
