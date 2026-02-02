@@ -13,6 +13,6 @@ public class Task5 {
     }
 
     public static void countFruits(List<String> list){
-
+        Map<String, Integer> count;
     }
 }

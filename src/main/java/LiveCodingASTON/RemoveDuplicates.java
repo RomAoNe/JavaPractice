@@ -8,12 +8,12 @@ public class RemoveDuplicates {
         System.out.println(removeDuplicates("Bananao"));
     }
 
-    public static String removeDuplicates(String text){
+    public static String removeDuplicates(String text) {
         // LinkedHashSet сохраняет порядок добавления
         Set<Character> seen = new LinkedHashSet<>();
 
         // Проходим по всем символам строки
-        for(char c: text.toCharArray()){
+        for (char c : text.toCharArray()) {
 
             // Set не добавит элемент, если он уже существует
             seen.add(c);
@@ -22,7 +22,7 @@ public class RemoveDuplicates {
         // StringBuilder используем для сборки результата
         StringBuilder result = new StringBuilder();
 
-        for(char c : seen){
+        for (char c : seen) {
             result.append(c);
         }
 

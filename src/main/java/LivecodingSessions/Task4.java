@@ -17,7 +17,8 @@ public class Task4 {
 
         return map.entrySet().stream()
                 .filter(n -> n.getValue() > 1)
-                .map(Map.Entry::getKey).mapToInt(Integer::intValue)
+                .map(Map.Entry::getKey)
+                .mapToInt(Integer::intValue)
                 .toArray();
     }
 }
