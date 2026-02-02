@@ -14,8 +14,6 @@ public class Maps {
         userBrowsers.put("Janica", "Chrome");
         userBrowsers.put("Mathew", "Firefox");
 
-        System.out.println("\nUsers with Chrome");
-
         Map<String, Integer> browserStats = new HashMap<>();
 
         for (Map.Entry<String, String> entry : userBrowsers.entrySet()) {
@@ -26,7 +24,20 @@ public class Maps {
         System.out.println("\nBrowsers statistics:");
 
         for (Map.Entry<String,Integer> entry : browserStats.entrySet()){
-            System.out.println(entry.getKey() + " -> " + entry.getKey());
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
         }
+
+        String mostPopularBrowser = null;
+        int maxUsers = 0;
+
+        for (Map.Entry<String, Integer> entry: browserStats.entrySet()){
+            if (entry.getValue() > maxUsers){
+                maxUsers = entry.getValue();
+                mostPopularBrowser = entry.getKey();
+            }
+        }
+
+        System.out.println("most popular browser is " + mostPopularBrowser);
+        System.out.println("max amount of users: " + maxUsers);
     }
 }
