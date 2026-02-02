@@ -18,7 +18,7 @@ public class DifferentTasks {
 //        areThereNegativeNumbers();
 //        getLengthOfStrings();
 //        keepNumbersMoreOrEquals3();
-isThereNumberBiggerThan5();
+        isThereNumberBiggerThan5();
     }
 
     public static void getStringsLengths() {
@@ -171,7 +171,7 @@ isThereNumberBiggerThan5();
 
         System.out.println(firstNumbers);
     }
-}
+
 
     public static void areThereNegativeNumbers() {
         /*
@@ -250,14 +250,3 @@ isThereNumberBiggerThan5();
         System.out.println(isThere);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
