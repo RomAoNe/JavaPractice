@@ -1,5 +1,7 @@
 package JustInCase;
 
+import java.util.Arrays;
+
 public class Ac_RemoveDuplicates {
     public static void main(String[] args) {
         /*
@@ -9,24 +11,32 @@ public class Ac_RemoveDuplicates {
         output:   [1,2,3,4,5]
         */
 
-        int[] arr = {1, 2, 2, 3, 4, 4, 5};
-   }
-//
-//    public static int[] removeDuplicates(int[] numbers) {
-//        if (numbers == null || numbers.length == 0) {
-//            throw new IllegalArgumentException("Array is empty");
-//        }
-//
-//        for (int i = 0; i < numbers.length; i++) {
-//            boolean isEqual = true;
-//
-//            for (int j = i; j <  numbers.length -1 -i; j++) {
-//                if (numbers[i] == numbers[j]){
-//
-//                }
-//            }
-//        }
-//
-//        return новый массив));
-//    }
+        int[] arr = {1,1,1,1,1, 2, 2, 3, 4, 4, 5};
+
+        System.out.println(Arrays.toString(deleteWithLoop(arr)));
+    }
+
+
+//    через цикл
+    public static int[] deleteWithLoop(int[] array) {
+        int[] temp = new int[array.length];
+        int index = 0;
+
+        for (int i = 0; i < array.length; i++) {
+            boolean isDuplicate = false;
+
+            for (int j = 0; j < i; j++) {
+                if (array[i] == array[j]) {
+                    isDuplicate = true;
+                    break;
+                }
+            }
+
+            if (!isDuplicate){
+                temp[index++] = array[i];
+            }
+        }
+
+        return temp;
+    }
 }
