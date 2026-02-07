@@ -1,7 +1,5 @@
 package LivecodingPractice;
 
-import java.util.Arrays;
-
 public class Task1_ReplaceFirstLetter {
     public static void main(String[] args) {
         /*
@@ -10,18 +8,24 @@ public class Task1_ReplaceFirstLetter {
         */
 
         String string = "Oston";
+        char firstChar = 'A';
 
-        System.out.println(replaceFirstChar(string));
+        System.out.println(replaceFirstCharSimpleCase(string, firstChar));
+        System.out.println(replaceFirstCharWithBuilder(string, firstChar));
     }
 
-    public static String replaceFirstChar(String string) {
-        if (string == null || string.isEmpty()) {
-            return string;
-        }
-
+    public static String replaceFirstCharSimpleCase(String string, char symbol) {
         char[] chars = string.toCharArray();
-        chars[0] = 'A';
+        chars[0] = symbol;
 
         return new String(chars);
+    }
+
+    public static String replaceFirstCharWithBuilder(String string, char firstChar) {
+        StringBuilder builder = new StringBuilder(string);
+
+        builder.setCharAt(0, firstChar);
+
+        return builder.toString();
     }
 }
