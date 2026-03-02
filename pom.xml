@@ -3,6 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.example</groupId>
   <artifactId>JavaPractice</artifactId>
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
   <version>1.0-SNAPSHOT</version>
   <name>Archetype - JavaPractice</name>
   <url>http://maven.apache.org</url>
